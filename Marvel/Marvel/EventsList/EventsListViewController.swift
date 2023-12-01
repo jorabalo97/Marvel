@@ -1,13 +1,14 @@
 //
-//  ItemsListViewController.swift
+//  EventsListViewController.swift
 //  Marvel
 //
-//  Created by Cristina Amoedo Fragueiro on 24/11/23.
+//  Created by Cristina Amoedo Fragueiro on 1/12/23.
 //
 
+import Foundation
 import UIKit
 
-class ItemsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EventsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     struct MarvelResponse: Codable {
         let code: Int
@@ -16,20 +17,20 @@ class ItemsListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     struct MarvelData: Codable {
-        let results: [Comic]
+        let results: [Event]
     }
     
-    struct Comic: Codable {
+    struct Event: Codable {
         let title: String?
-        let variantDescription: String?
+        let description: String?
     }
-    var comics: [Comic] = []
-    var viewModel: ItemsListViewModel?
+    var events: [Event] = []
+    var viewModel: EventsListViewModel?
     
-    func fetchMarvelComics(completion: @escaping (Result<[Comic], Error>) -> Void) {
+    func fetchMarvelEvents(completion: @escaping (Result<[Event], Error>) -> Void) {
         let publicKey = "91876cd71efdc7d4d08056257a5dd7bf"
         let privateKey = "4b31ba5c27608c34ec0d47763e976f32001d59e6"
-        let baseURL = "https://gateway.marvel.com/v1/public/comics"
+        let baseURL = "https://gateway.marvel.com/v1/public/events"
         
         // Construir la URL con las claves y otros parámetros
         let timestamp = String(Date().timeIntervalSince1970)
@@ -57,11 +58,11 @@ class ItemsListViewController: UIViewController, UITableViewDelegate, UITableVie
                         }
                         
                         // Acceder a la matriz de cómics dentro de la respuesta
-                        let comics = marvelResponse.data.results
+                        let events = marvelResponse.data.results
                         
                         // Actualizar la interfaz de usuario en el hilo principal
                         DispatchQueue.main.async {
-                            completion(.success(comics))
+                            completion(.success(events))
                         }
                     } catch {
                         print("Error decoding JSON: \(error)")
@@ -77,43 +78,43 @@ class ItemsListViewController: UIViewController, UITableViewDelegate, UITableVie
             completion(.failure(error))
         }
     }
-    func updateUI(with comics: [Comic]) {
-        self.comics = comics
+    func updateUI(with events: [Event]) {
+        self.events = events
         DispatchQueue.main.async {
-            self.itemsTable.reloadData()
+            self.eventsTable.reloadData()
         }
     }
     
-    @IBOutlet weak var itemsTable: UITableView!
+    @IBOutlet weak var eventsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchMarvelComics { result in
+        fetchMarvelEvents { result in
             switch result {
-            case .success(let comics):
+            case .success(let events):
                 // Procesa los cómics y actualiza la interfaz de usuario
-                self.updateUI(with: comics)
+                self.updateUI(with: events)
             case .failure(let error):
                 print("Error: \(error)")
             }
         }
-        itemsTable.dataSource = self
-        itemsTable.delegate = self
-        itemsTable.reloadData()
+        eventsTable.dataSource = self
+        eventsTable.delegate = self
+        eventsTable.reloadData()
     }
     
     
     // MARK: - UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        comics.count
+        events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = itemsTable.dequeueReusableCell(withIdentifier: "itemCell" , for : indexPath)
-        let comic = comics[indexPath.row]
-        cell.textLabel?.text = comic.title
-        cell.detailTextLabel?.text = comic.variantDescription
-        cell.imageView?.image = UIImage(systemName: "book")
+        let cell = eventsTable.dequeueReusableCell(withIdentifier: "eventCell" , for : indexPath)
+        let events = events[indexPath.row]
+        cell.textLabel?.text = events.title
+        cell.detailTextLabel?.text = events.description
+        cell.imageView?.image = UIImage(systemName: "av.remote")
         return cell
     }
     
@@ -123,9 +124,9 @@ class ItemsListViewController: UIViewController, UITableViewDelegate, UITableVie
         performSegue(withIdentifier: "vistaDeDetalle", sender: self)
     }
     //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "vistaComic" {
+    //        if segue.identifier == "vistaEvent" {
     //            if let indexPath = tableView.indexPathForSelectedRow,
-    //               let destinationVC = segue.destination as? ComicViewController {
+    //               let destinationVC = segue.destination as? EventsViewController {
     //             // AQUÍ PASAMOS LOS DATOS QUE QUEREMOS A LA OTRA VISTA
     //                destinationVC.dato = datos[indexPath.row]
     //            }

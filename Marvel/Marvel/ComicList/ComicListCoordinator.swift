@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ItemsListCoordinator {
+class ComicListCoordinator {
     weak var navigationController: UINavigationController?
     init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
@@ -18,10 +18,10 @@ class ItemsListCoordinator {
     }
     
     func build() -> UIViewController {
-        let itemsListViewController = ItemsListViewController()
-        let itemsListViewModel = ItemsListViewModel(itemsListCoordinator: self, view: itemsListViewController)
-        itemsListViewController.viewModel = itemsListViewModel
+        let comicListViewController = ComicListViewController()
+        let comicListViewModel = ComicListViewModel(comicListCoordinator: self, view: comicListViewController)
+        comicListViewController.viewModel = comicListViewModel
         
-        return itemsListViewController
+        return comicListViewController
     }
 }
