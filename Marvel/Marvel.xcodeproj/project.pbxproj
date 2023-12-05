@@ -26,6 +26,7 @@
 		863E21532B15F44D002B3ADF /* ComicListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E21522B15F44D002B3ADF /* ComicListCoordinator.swift */; };
 		863E21552B15F4E7002B3ADF /* ComicListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E21542B15F4E7002B3ADF /* ComicListViewModel.swift */; };
 		86421EBB2B109EA40058D1AE /* ComicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86421EBA2B109EA40058D1AE /* ComicListViewController.swift */; };
+		B1D1ABD82B1DD3B800F97650 /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1ABD72B1DD3B800F97650 /* CharactersListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		863E21522B15F44D002B3ADF /* ComicListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicListCoordinator.swift; sourceTree = "<group>"; };
 		863E21542B15F4E7002B3ADF /* ComicListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicListViewModel.swift; sourceTree = "<group>"; };
 		86421EBA2B109EA40058D1AE /* ComicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicListViewController.swift; sourceTree = "<group>"; };
+		B1D1ABD72B1DD3B800F97650 /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				862086C32B0CD2A2001D3D39 /* Assets.xcassets */,
 				862086C52B0CD2A2001D3D39 /* LaunchScreen.storyboard */,
 				862086C82B0CD2A2001D3D39 /* Info.plist */,
+				B1D1ABD42B1DD31100F97650 /* FCharactersList */,
 				8629EDED2B19D25900189A1C /* Extensions */,
 				86421EB92B109E860058D1AE /* ComicList */,
 				8629EDEE2B19D42900189A1C /* StoriesList */,
@@ -146,6 +149,14 @@
 			path = ComicList;
 			sourceTree = "<group>";
 		};
+		B1D1ABD42B1DD31100F97650 /* FCharactersList */ = {
+			isa = PBXGroup;
+			children = (
+				B1D1ABD72B1DD3B800F97650 /* CharactersListViewController.swift */,
+			);
+			path = FCharactersList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,6 +184,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+					"New-1",
+				);
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
@@ -224,6 +239,7 @@
 				8629EDEC2B19BE5D00189A1C /* HashExtension.swift in Sources */,
 				862086BF2B0CD29F001D3D39 /* ViewController.swift in Sources */,
 				8629EDFE2B19D77300189A1C /* SeriesListCoordinator.swift in Sources */,
+				B1D1ABD82B1DD3B800F97650 /* CharactersListViewController.swift in Sources */,
 				8629EE022B19D79F00189A1C /* SeriesListViewModel.swift in Sources */,
 				86421EBB2B109EA40058D1AE /* ComicListViewController.swift in Sources */,
 				8629EDF82B19D73E00189A1C /* EventsListViewController.swift in Sources */,

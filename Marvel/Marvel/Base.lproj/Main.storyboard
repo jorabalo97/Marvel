@@ -9,6 +9,59 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--CharactersListViewController-->
+        <scene sceneID="1A2-zc-Tt1">
+            <objects>
+                <viewController title="CharactersListViewController" id="ZIJ-0x-xlx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ksr-bj-vFu">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5oR-ji-EkW">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GEJ-8M-vip">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <searchBar key="tableHeaderView" contentMode="redraw" text="" id="gYm-1b-1Xo">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="bnC-cl-EfB"/>
+                                            </constraints>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="ZIJ-0x-xlx" id="b77-6i-V7D"/>
+                                            </connections>
+                                        </searchBar>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" rowHeight="51" id="wGJ-WY-TFU">
+                                                <rect key="frame" x="0.0" y="100" width="393" height="51"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wGJ-WY-TFU" id="rPB-pq-nnn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ddq-7l-3MO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5oR-ji-EkW" firstAttribute="top" secondItem="Ddq-7l-3MO" secondAttribute="top" id="5iZ-QM-jaf"/>
+                            <constraint firstItem="Ddq-7l-3MO" firstAttribute="bottom" secondItem="5oR-ji-EkW" secondAttribute="bottom" id="8U1-c9-9XQ"/>
+                            <constraint firstItem="Ddq-7l-3MO" firstAttribute="trailing" secondItem="5oR-ji-EkW" secondAttribute="trailing" id="91l-jR-ubA"/>
+                            <constraint firstItem="5oR-ji-EkW" firstAttribute="leading" secondItem="ksr-bj-vFu" secondAttribute="leading" id="ULF-X2-tve"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZV-aG-nXp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-602.29007633587787" y="-27.464788732394368"/>
+        </scene>
         <!--Comic List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
