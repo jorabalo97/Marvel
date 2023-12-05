@@ -12,62 +12,46 @@ class CharactersListViewController: UIViewController {
     
     let Characters = ["Iron-Man","Capitan America","Hulk","Thor","Black Widow","Vision","Wanda","Spider-man","Ojo de Halcon","Venom","Loki","Capitana Marvel","Groot","Star Lord","Gamora","Rocket","Drax","Wolverine","Ms.Marvel"]
     
-    var FiltredCharacters: [String]!
-    @IBOutlet weak var SearchBar: UISearchBar!
-    @IBOutlet weak var TableView: UITableView!
+    var filteredCharacters: [String]!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Definir delegados de SearchBar
-        SearchBar.delegate=self
-        
-        //Definir los delegados de la tabla
-        TableView.delegate=self
-        TableView.dataSource=self
-        
-        FiltredCharacters = Characters
-        
-        
-        
-        
+        searchBar.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        filteredCharacters = Characters
     }
 }
-      //Metodos SearchBar
+
 extension CharactersListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        FiltredCharacters = []
-        
+        filteredCharacters = []
         if searchText == "" {
-            FiltredCharacters = Characters
+            filteredCharacters = Characters
         }else{
-            for Character in Characters{
-                if Character.lowercased().contains(searchText.lowercased()) {
-                    FiltredCharacters.append(Character)
+            for character in Characters {
+                if character.lowercased().contains(searchText.lowercased()) {
+                    filteredCharacters.append(character)
                 }
             }
-            
-            
         }
-        self.TableView.reloadData()
+        self.tableView.reloadData()
     }
 }
-    extension CharactersListViewController: UITableViewDelegate, UITableViewDataSource {
-        
-        
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return FiltredCharacters.count
-        }
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let celda = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
-            celda.textLabel?.text = FiltredCharacters[indexPath.row]
-            return celda
-            
-        }
-        
-        
+
+extension CharactersListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredCharacters.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
+        cell.textLabel?.text = filteredCharacters[indexPath.row]
+        return cell
+    }
+    }
 
