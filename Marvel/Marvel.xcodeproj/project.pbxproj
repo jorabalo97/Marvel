@@ -26,7 +26,6 @@
 		863E21532B15F44D002B3ADF /* ComicListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E21522B15F44D002B3ADF /* ComicListCoordinator.swift */; };
 		863E21552B15F4E7002B3ADF /* ComicListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E21542B15F4E7002B3ADF /* ComicListViewModel.swift */; };
 		86421EBB2B109EA40058D1AE /* ComicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86421EBA2B109EA40058D1AE /* ComicListViewController.swift */; };
-		B1D1ABD62B1DD35500F97650 /* CharactersListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D1ABD52B1DD35500F97650 /* CharactersListStoryboard.storyboard */; };
 		B1D1ABD82B1DD3B800F97650 /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1ABD72B1DD3B800F97650 /* CharactersListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +51,6 @@
 		863E21522B15F44D002B3ADF /* ComicListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicListCoordinator.swift; sourceTree = "<group>"; };
 		863E21542B15F4E7002B3ADF /* ComicListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicListViewModel.swift; sourceTree = "<group>"; };
 		86421EBA2B109EA40058D1AE /* ComicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicListViewController.swift; sourceTree = "<group>"; };
-		B1D1ABD52B1DD35500F97650 /* CharactersListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharactersListStoryboard.storyboard; sourceTree = "<group>"; };
 		B1D1ABD72B1DD3B800F97650 /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,7 +152,6 @@
 		B1D1ABD42B1DD31100F97650 /* FCharactersList */ = {
 			isa = PBXGroup;
 			children = (
-				B1D1ABD52B1DD35500F97650 /* CharactersListStoryboard.storyboard */,
 				B1D1ABD72B1DD3B800F97650 /* CharactersListViewController.swift */,
 			);
 			path = FCharactersList;
@@ -225,7 +222,6 @@
 				862086C72B0CD2A2001D3D39 /* LaunchScreen.storyboard in Resources */,
 				862086C42B0CD2A2001D3D39 /* Assets.xcassets in Resources */,
 				862086C22B0CD29F001D3D39 /* Main.storyboard in Resources */,
-				B1D1ABD62B1DD35500F97650 /* CharactersListStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
